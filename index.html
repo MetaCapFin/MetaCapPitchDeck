@@ -69,6 +69,22 @@
             width: 100%;
             height: auto;
         }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
         .step-header {
             margin-top: 40px;
             max-width: 1200px;
@@ -158,6 +174,8 @@
                     <img src="images/Flyer 6.svg" alt="Flyer 6">
                 </div>
             </div>
+            <button class="arrow arrow-left">&#10094;</button>
+            <button class="arrow arrow-right">&#10095;</button>
         </div>
         <div class="step-header">
             <h2>Step 1: Fill the Ygrene Form!</h2>
@@ -186,10 +204,15 @@
             const slides = document.querySelector('.slides');
             const totalSlides = document.querySelectorAll('.slide').length;
 
-            setInterval(() => {
+            document.querySelector('.arrow-left').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+
+            document.querySelector('.arrow-right').addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }, 3000); // Change slide every 3 seconds
+            });
         });
     </script>
 </body>
