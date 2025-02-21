@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ygrene PACE Program with Carlos Alvarez</title>
-    <meta property="og property="og:description" content="Pitch Deck">
+    <title>MetaCap Pitch Deck</title>
+    <meta property="og:title" content="30 Minute Introductory Meeting">
+    <meta property="og:image" content="LogoName.png">
+    <meta property="og:description" content="Pitch Deck">
     <meta property="og:type" content="website">
     <meta property="og:url" content="URL_OF_YOUR_PAGE">
     <style>
@@ -153,7 +155,17 @@
         }
         /* Custom CSS to make Calendly widget background dark purple */
         .calendly-inline-widget iframe {
-            background: #4B0082 !important; /* Dark purple color */
+            background: transparent !important;
+        }
+        .calendly-inline-widget iframe::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #4B0082; /* Dark purple color */
+            z-index: -1;
         }
     </style>
 </head>
