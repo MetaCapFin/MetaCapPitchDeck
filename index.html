@@ -219,6 +219,19 @@
                 currentIndex = (currentIndex + 1) % totalSlides;
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             });
+
+            // Inject custom CSS into the Calendly iframe
+            const iframe = document.querySelector('.calendly-inline-widget iframe');
+            iframe.onload = function() {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    .calendly-inline-widget {
+                        background: transparent !important;
+                    }
+                `;
+                iframeDoc.head.appendChild(style);
+            };
         });
     </script>
 </body>
