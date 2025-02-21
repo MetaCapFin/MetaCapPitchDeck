@@ -15,7 +15,9 @@
             margin: 0;
             padding: 0;
             background: url('images/gradient Metacap.png') no-repeat center center fixed;
-            flex;
+            background-size: cover;
+            color: white; /* Set typography color to white */
+            display: flex;
             flex-direction: column;
             min-height: 100vh;
             position: relative;
@@ -52,7 +54,7 @@
         .header h1 {
             margin: 0;
             padding: 0 20px;
-            font-size: 4em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
         }
         .video-section {
             text-align: center;
@@ -60,7 +62,7 @@
             background-color: transparent; /* Make the background transparent */
         }
         .video-section h2 {
-            font-size: 2em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
             margin-bottom: 20px;
         }
         .video-section video {
@@ -123,7 +125,7 @@
         .step-header h2 {
             text-align: center; /* Center the h2 element */
             margin-left: 20px;
-            font-size: 2em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
         }
         .calendly-inline-widget {
             margin-top: 10px;
@@ -138,14 +140,14 @@
             max-width: 1200px;
             margin: auto;
             margin-bottom: 20px;
-            font-size: 2em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
         }
         .qr-code-lower {
             text-align: center;
             margin: 20px 0 60px;
         }
         .qr-code-lower p {
-            font-size: 4em; /* Double the font size */
+            font-size: 2em; /* Double the font size */
             font-weight: bold; /* Make the text bold */
         }
         .qr-code-lower img {
@@ -159,7 +161,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 2em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
         }
         .button:hover {
             background-color: #003366;
@@ -168,7 +170,7 @@
             text-align: center;
             margin: 0 auto;
             padding: 0 20px;
-            font-size: 2em; /* Double the font size */
+            font-size: 1em; /* Set font size to 1em */
         }
         @media (max-width: 600px) {
             .header {
@@ -182,7 +184,7 @@
             }
             .header h1 {
                 padding: 0;
-                font-size: 2em; /* Adjust for smaller screens */
+                font-size: 1em; /* Adjust for smaller screens */
             }
             .calendly-inline-widget {
                 height: 1000px;
@@ -248,7 +250,7 @@
         <p>Scan the QR code to view on Mobile</p>
         <img src="PitchDeckQR.png" alt="QR Code">
     </div>
-     <script type="text/javascript">
+    <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
             const script = document.createElement("script");
             script.src = "https://assets.calendly.com/assets/external/widget.js";
