@@ -15,9 +15,7 @@
             margin: 0;
             padding: 0;
             background: url('images/gradient Metacap.png') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            display: flex;
+            flex;
             flex-direction: column;
             min-height: 100vh;
             position: relative;
@@ -146,8 +144,12 @@
             text-align: center;
             margin: 20px 0 60px;
         }
+        .qr-code-lower p {
+            font-size: 4em; /* Double the font size */
+            font-weight: bold; /* Make the text bold */
+        }
         .qr-code-lower img {
-            width: 33.33%;
+            width: 8.33%; /* One-fourth of the original size (33.33% / 4) */
         }
         .button {
             display: inline-block;
@@ -246,14 +248,14 @@
         <p>Scan the QR code to view on Mobile</p>
         <img src="PitchDeckQR.png" alt="QR Code">
     </div>
-    <script type="text/javascript">
+     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
             const script = document.createElement("script");
             script.src = "https://assets.calendly.com/assets/external/widget.js";
             script.async = true;
             document.body.appendChild(script);
 
-           let currentIndex = 0;
+            let currentIndex = 0;
             const slides = document.querySelector('.slides');
             const totalSlides = document.querySelectorAll('.slide').length;
 
