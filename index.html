@@ -29,7 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
             z-index: 0;
         }
         .header, .video-section, .container, .step-header, .calendly-inline-widget, .qr-code-lower {
@@ -253,11 +253,11 @@
             script.async = true;
             document.body.appendChild(script);
 
-            let currentIndex = 0;
+           let currentIndex = 0;
             const slides = document.querySelector('.slides');
             const totalSlides = document.querySelectorAll('.slide').length;
 
-        document.querySelector('.arrow-left').addEventListener('click', () => {
+            document.querySelector('.arrow-left').addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             });
@@ -269,4 +269,4 @@
         });
     </script>
 </body>
-</html>            
+</html>
