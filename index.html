@@ -194,7 +194,7 @@
             <p>Phone: +17869995678</p>
         </div>
     </div>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/ygrene-support/30-minute-introductory-meeting?embed_domain=yourdomain.com&embed_type=Inline&background_color=00000000" style="min-width:320px;height:800px;background:transparent;"></div>
+    <div id="calendly-embed"></div>
     <div class="qr-code-lower">
         <p>Scan the QR code to view on Mobile</p>
         <img src="PitchDeckQR.png" alt="QR Code">
@@ -220,18 +220,12 @@
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             });
 
-            // Inject custom CSS into the Calendly iframe
-            const iframe = document.querySelector('.calendly-inline-widget iframe');
-            iframe.onload = function() {
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                const style = document.createElement('style');
-                style.innerHTML = `
-                    .calendly-inline-widget {
-                        background: transparent !important;
-                    }
-                `;
-                iframeDoc.head.appendChild(style);
-            };
+            Calendly.initInlineWidget({
+                url: 'https://calendly.com/ygrene-support/30-minute-introductory-meeting?embed_domain=yourdomain.com&embed_type=Inline&background_color=00000000',
+                parentElement: document.getElementById('calendly-embed'),
+                prefill: {},
+                utm: {}
+            });
         });
     </script>
 </body>
