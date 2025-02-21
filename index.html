@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaCap Pitch Deck</title>
+    <title>Ygrene PACE Program with Carlos Alvarez</title>
     <meta property="og:title" content="30 Minute Introductory Meeting">
     <meta property="og:image" content="LogoName.png">
     <meta property="og:description" content="Pitch Deck">
@@ -97,7 +97,6 @@
         .calendly-inline-widget {
             margin-top: 10px;
             height: 800px;
-            background: transparent;
         }
         .content {
             background-color: rgba(255, 255, 255, 0.8);
@@ -194,7 +193,7 @@
             <p>Phone: +17869995678</p>
         </div>
     </div>
-    <div id="calendly-embed"></div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/ygrene-support/30-minute-introductory-meeting" style="min-width:320px;height:800px;"></div>
     <div class="qr-code-lower">
         <p>Scan the QR code to view on Mobile</p>
         <img src="PitchDeckQR.png" alt="QR Code">
@@ -218,13 +217,6 @@
             document.querySelector('.arrow-right').addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            });
-
-            Calendly.initInlineWidget({
-                url: 'https://calendly.com/ygrene-support/30-minute-introductory-meeting?embed_domain=yourdomain.com&embed_type=Inline&background_color=00000000',
-                parentElement: document.getElementById('calendly-embed'),
-                prefill: {},
-                utm: {}
             });
         });
     </script>
