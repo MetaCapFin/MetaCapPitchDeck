@@ -79,7 +79,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: center.
         }
         .slider {
             position: relative;
@@ -94,11 +94,11 @@
         }
         .slide {
             min-width: 100%;
-            box-sizing: border-box;
+            box-sizing: border-box.
         }
         .slide img {
             width: 100%;
-            height: auto;
+            height: auto.
         }
         .arrow {
             position: absolute;
@@ -108,13 +108,13 @@
             color: white;
             border: none;
             padding: 10px;
-            cursor: pointer;
+            cursor: pointer.
         }
         .arrow-left {
-            left: 10px;
+            left: 10px.
         }
         .arrow-right {
-            right: 10px;
+            right: 10px.
         }
         .step-header {
             margin-top: 40px;
@@ -129,7 +129,7 @@
         }
         .calendly-inline-widget {
             margin-top: 10px;
-            height: 800px;
+            height: 800px.
         }
         .content {
             background-color: rgba(255, 255, 255, 0.8);
@@ -144,7 +144,7 @@
         }
         .qr-code-lower {
             text-align: center;
-            margin: 20px 0 60px;
+            margin: 20px 0 60px.
         }
         .qr-code-lower p {
             font-size: 2em; /* Double the font size */
@@ -164,7 +164,7 @@
             font-size: 1.5em; /* Increased font size by 1.5 times */
         }
         .button:hover {
-            background-color: #003366;
+            background-color: #003366.
         }
         .contact-info {
             text-align: center;
@@ -176,26 +176,26 @@
             .header {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: center.
             }
             .header img {
                 position: static;
-                margin-bottom: 10px;
+                margin-bottom: 10px.
             }
             .header h1 {
                 padding: 0;
                 font-size: 2em; /* Adjust for smaller screens */
             }
             .calendly-inline-widget {
-                height: 1000px;
+                height: 1000px.
             }
             .arrow {
-                padding: 5px;
+                padding: 5px.
             }
         }
         /* Custom CSS to make Calendly widget background dark purple */
         .calendly-inline-widget iframe {
-            background: transparent !important;
+            background: transparent !important.
         }
     </style>
 </head>
@@ -207,7 +207,7 @@
     <div class="video-section">
         <h2>Play the video to view our offering</h2>
         <video controls>
-            <source src="your-video-file.mp4" type="video/mp4">
+            <source src="videos/PitchDeckVideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -237,20 +237,20 @@
             <button class="arrow arrow-right">&#10095;</button>
         </div>
     </div>
-  <div class="step-header">
-    <h2>Happy to answer any question before meeting!</h2>
-    <div class="contact-info">
-        <p><a href="mailto:advisor@metacap.finance">
-                <img src="images/EmailUsButton.svg" alt="Email Us">
-            </a>
-        </p>
+    <div class="step-header">
+        <h2>Happy to answer any question before meeting!</h2>
+        <div class="contact-info">
+            <p><a href="mailto:advisor@metacap.finance">
+                    <img src="images/EmailUsButton.svg" alt="Email Us">
+                </a>
+            </p>
+        </div>
     </div>
-</div>
-<div class="step-header">
-    <h2>Schedule a meeting to connect with us</h2>
-</div>
-<div class="calendly-inline-widget" data-url="https://calendly.com/ygrene-support/30-minute-introductory-meeting?background_color=05041a&text_color=ffffff&primary_color=21fdf6" style="min-width:320px;height:800px;"></div>
-<script type="text/javascript">
+    <div class="step-header">
+        <h2>Schedule a meeting to connect with us</h2>
+    </div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/ygrene-support/30-minute-introductory-meeting?background_color=05041a&text_color=ffffff&primary_color=21fdf6" style="min-width:320px;height:800px;"></div>
+    <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
             const script = document.createElement("script");
             script.src = "https://assets.calendly.com/assets/external/widget.js";
