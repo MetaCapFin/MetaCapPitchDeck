@@ -429,6 +429,22 @@
         currentIndex = (currentIndex + 1) % totalSlides;
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     });
+
+    // FAQ functionality
+    const faqButtons = document.querySelectorAll('.faq-button');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const target = document.querySelector(button.getAttribute('data-target'));
+            if (target.classList.contains('show')) {
+                target.classList.remove('show');
+            } else {
+                document.querySelectorAll('.collapse').forEach(collapse => {
+                    collapse.classList.remove('show');
+                });
+                target.classList.add('show');
+            }
+        });
+    });
 });
 </script>
 </body>
