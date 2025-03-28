@@ -248,6 +248,15 @@
             border-radius: 5px;
             text-align: left;
         }
+        .faq-button {
+            background-color: #004d99;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -324,6 +333,7 @@
     <div class="faq-section" id="faqs">
         <h2>FAQ's</h2>
         <div class="faq-item">
+            <button class="faq-button">+</button>
             <div class="faq-question">Question 1</div>
             <div class="faq-answer">Answer to question 1.</div>
         </div>
@@ -377,14 +387,14 @@
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             });
 
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                });
+             const faqButtons = document.querySelectorAll('.faq-button');
+            faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
