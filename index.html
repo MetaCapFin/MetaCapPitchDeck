@@ -233,13 +233,16 @@
         .faq-item {
             margin-bottom: 10px;
         }
-        .faq-question {
+       .faq-question {
             cursor: pointer;
-            background-color: transparent;
+            background-color: #004d99;
             color: white;
             padding: 10px;
             border-radius: 5px;
             text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .faq-answer {
             display: none;
@@ -248,14 +251,14 @@
             border-radius: 5px;
             text-align: left;
         }
-        .faq-button {
+       .faq-button {
             background-color: #004d99;
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            margin-right: 10px;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -389,14 +392,14 @@
                 slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             });
 
-             const faqButtons = document.querySelectorAll('.faq-button');
+            const faqButtons = document.querySelectorAll('.faq-button');
             faqButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                button.addEventListener('click', () => {
+                    const answer = button.parentElement.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                });
             });
         });
-    });
 </script>
 </body>
 </html>
