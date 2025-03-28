@@ -408,12 +408,7 @@
         </div>
     </div>
 </div>
-    <!-- Include Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
@@ -432,22 +427,6 @@
     document.querySelector('.arrow-right').addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % totalSlides;
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    });
-
-    // FAQ functionality
-    const faqButtons = document.querySelectorAll('.faq-button');
-    faqButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const target = document.querySelector(button.getAttribute('data-target'));
-            if (target.classList.contains('show')) {
-                target.classList.remove('show');
-            } else {
-                document.querySelectorAll('.collapse').forEach(collapse => {
-                    collapse.classList.remove('show');
-                });
-                target.classList.add('show');
-            }
-        });
     });
 });
 </script>
