@@ -432,15 +432,15 @@
     faqButtons.forEach(button => {
         button.addEventListener('click', () => {
             const faqItem = button.closest('.faq-item');
-            const faqAnswer = faqItem.querySelector('.faq-answer');
+            const faqAnswer = faqItem.querySelector('.collapse');
 
-            if (faqAnswer.classList.contains('visible')) {
-                faqAnswer.classList.remove('visible');
+            if (faqAnswer.classList.contains('show')) {
+                faqAnswer.classList.remove('show');
             } else {
-                document.querySelectorAll('.faq-answer').forEach(answer => {
-                    answer.classList.remove('visible');
+                document.querySelectorAll('.collapse').forEach(answer => {
+                    answer.classList.remove('show');
                 });
-                faqAnswer.classList.add('visible');
+                faqAnswer.classList.add('show');
             }
         });
     });
