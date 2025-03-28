@@ -231,36 +231,40 @@
 .team-member {
     margin-bottom: 20px;
 }
-        .faq-item {
-            margin-bottom: 10px;
-        }
-       .faq-question {
-            cursor: pointer;
-            background-color: #004d99;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            background-color: transparent;
-            border-radius: 5px;
-            text-align: left;
-        }
-        .faq-button {
-            background-color: #004d99;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 10px;
-        }
+        .faq-question {
+    cursor: pointer;
+    background-color: #004d99;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: left;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+}
+.faq-button {
+    background-color: #004d99;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.faq-answer.visible {
+    display: block;
+    max-height: 500px; /* Adjust as needed */
+}
     </style>
 </head>
 <body>
@@ -395,42 +399,42 @@
     </div>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
-        const script = document.createElement("script");
-        script.src = "https://assets.calendly.com/assets/external/widget.js";
-        script.async = true;
-        document.body.appendChild(script);
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-        let currentIndex = 0;
-        const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
 
-        document.querySelector('.arrow-left').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        });
+    document.querySelector('.arrow-left').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 
-        document.querySelector('.arrow-right').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        });
+    document.querySelector('.arrow-right').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 
-        const faqButtons = document.querySelectorAll('.faq-button');
-        faqButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.closest('.faq-item');
-                const faqAnswer = faqItem.querySelector('.faq-answer');
+    const faqButtons = document.querySelectorAll('.faq-button');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.closest('.faq-item');
+            const faqAnswer = faqItem.querySelector('.faq-answer');
 
-                if (faqAnswer.style.display === 'block') {
-                    faqAnswer.style.display = 'none';
-                } else {
-                    document.querySelectorAll('.faq-answer').forEach(answer => {
-                        answer.style.display = 'none';
-                    });
-                    faqAnswer.style.display = 'block';
-                }
-            });
+            if (faqAnswer.classList.contains('visible')) {
+                faqAnswer.classList.remove('visible');
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(answer => {
+                    answer.classList.remove('visible');
+                });
+                faqAnswer.classList.add('visible');
+            }
         });
     });
+});
 </script>
 </body>
 </html>
