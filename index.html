@@ -251,8 +251,18 @@
     background-color: transparent;
     border-radius: 5px;
     text-align: left;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     overflow: hidden;
+}
+.collapse.show {
+    display: block;
+    max-height: 1000px; /* Adjust this value based on your content */
+    padding: 10px;
+}
+.collapse {
+    display: none;
+    max-height: 0;
+    padding: 0;
 }
     </style>
 </head>
@@ -397,7 +407,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
