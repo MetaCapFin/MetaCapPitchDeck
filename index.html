@@ -251,7 +251,7 @@
             border-radius: 5px;
             text-align: left;
         }
-       .faq-button {
+        .faq-button {
             background-color: #004d99;
             color: white;
             border: none;
@@ -389,34 +389,43 @@
 </div>
     </div>
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            const script = document.createElement("script");
-            script.src = "https://assets.calendly.com/assets/external/widget.js";
-            script.async = true;
-            document.body.appendChild(script);
+    document.addEventListener("DOMContentLoaded", function() {
+        const script = document.createElement("script");
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
 
-            let currentIndex = 0;
-            const slides = document.querySelector('.slides');
-            const totalSlides = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
 
-            document.querySelector('.arrow-left').addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            });
+        document.querySelector('.arrow-left').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
 
-            document.querySelector('.arrow-right').addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            });
+        document.querySelector('.arrow-right').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
 
-            const faqButtons = document.querySelectorAll('.faq-button');
-            faqButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const answer = button.parentElement.nextElementSibling;
-                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                });
+        const faqButtons = document.querySelectorAll('.faq-button');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+
+                if (faqAnswer.style.display === 'block') {
+                    faqAnswer.style.display = 'none';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(answer => {
+                        answer.style.display = 'none';
+                    });
+                    faqAnswer.style.display = 'block';
+                }
             });
         });
+    });
 </script>
 </body>
 </html>
