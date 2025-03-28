@@ -243,7 +243,6 @@
     align-items: center;
 }
 .faq-answer {
-    display: none;
     padding: 10px;
     background-color: transparent;
     border-radius: 5px;
@@ -251,19 +250,6 @@
     transition: max-height 0.5s ease-in-out;
     overflow: hidden;
     max-height: 0;
-}
-.faq-button {
-    background-color: #004d99;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-.faq-answer.visible {
-    display: block;
-    max-height: 500px; /* Adjust as needed */
 }
     </style>
 </head>
@@ -344,7 +330,7 @@
     <div class="faq-section" id="faqs">
         <h2>FAQ's</h2>
       <div class="faq-section" id="faqs">
-    <div class="faq-item">
+        <div class="faq-item">
         <div class="faq-question">
             What does MetaCap do?
             <button class="faq-button">+</button>
