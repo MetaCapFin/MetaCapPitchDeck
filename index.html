@@ -236,38 +236,38 @@
             margin-bottom: 20px;
         }
         .faq-item {
-    width: 100%;
-        background-color: #004d99;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: left;
-        box-sizing: border-box; /* Include padding in the width calculation */
-        margin-bottom: 10px;
-    }
-    .faq-question {
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .faq-answer {
-        background-color: transparent;
-        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-        overflow: hidden;
-        max-height: 0;
-        padding: 0;
-    }
-    .collapse.show {
-        max-height: 1000px; /* Adjust this value based on your content */
-        padding: 10px;
-        overflow: visible;
-    }
-    .collapse {
-        max-height: 0;
-        padding: 0;
-        overflow: hidden;
-    }
+            width: 100%;
+            background-color: #004d99;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            box-sizing: border-box; /* Include padding in the width calculation */
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            background-color: transparent;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            overflow: hidden;
+            max-height: 0;
+            padding: 0;
+        }
+        .collapse.show {
+            max-height: 1000px; /* Adjust this value based on your content */
+            padding: 10px;
+            overflow: visible;
+        }
+        .collapse {
+            max-height: 0;
+            padding: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -275,7 +275,7 @@
         <img src="LogoName.png" alt="Logo">
         <h1>Pitch Deck</h1>
         <div class="subheader">
-            <a href="#container mt-5 faq-section">FAQ's</a>
+            <a href="#faq-section">FAQ's</a>
         </div>
     </div>
     <div class="video-section">
@@ -330,7 +330,7 @@
     </div>
     <div class="calendly-inline-widget" data-url="https://calendly.com/ygrene-support/30-minute-introductory-meeting?background_color=05041a&text_color=ffffff&primary_color=21fdf6" style="min-width:320px;height:800px;"></div>
     </div>
-     <div class="container mt-5 faq-section">
+     <div class="container mt-5 faq-section" id="faq-section">
         <h2>FAQ's</h2>
         <div class="faq-item">
             <div class="faq-question" id="faq1">
