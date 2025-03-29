@@ -399,42 +399,42 @@
     </div>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+        const script = document.createElement("script");
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
 
-    let currentIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
 
-    document.querySelector('.arrow-left').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    });
+        document.querySelector('.arrow-left').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
 
-    document.querySelector('.arrow-right').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    });
+        document.querySelector('.arrow-right').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
 
-    const faqButtons = document.querySelectorAll('.faq-button');
-    faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const faqItem = button.closest('.faq-item');
-            const faqAnswer = faqItem.querySelector('.faq-answer');
+        const faqButtons = document.querySelectorAll('.faq-button');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const faqAnswer = faqItem.querySelector('.faq-answer');
 
-            if (faqAnswer.classList.contains('visible')) {
-                faqAnswer.classList.remove('visible');
-            } else {
-                document.querySelectorAll('.faq-answer').forEach(answer => {
-                    answer.classList.remove('visible');
-                });
-                faqAnswer.classList.add('visible');
-            }
+                if (faqAnswer.classList.contains('show')) {
+                    faqAnswer.classList.remove('show');
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(answer => {
+                        answer.classList.remove('show');
+                    });
+                    faqAnswer.classList.add('show');
+                }
+            });
         });
     });
-});
 </script>
 </body>
 </html>
